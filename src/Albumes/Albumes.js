@@ -41,8 +41,36 @@ export function Albumes() {
         return(
 
             <>
-                <h1>Hola Soy Albumes Y Soy Un Componente</h1>
-            </>
+            <div className="row row-cols-md-4 g-4 justify-content-center text-center " >
+
+                {
+                   canciones.map(cancion=>{
+
+                    return(
+
+                        <>
+                        
+                            <div className="col" >
+
+                                <div className="card h-100"  >
+
+                                    <img src={cancion.album.images[0].url}/>
+                                    <audio controls src={cancion.preview_url} ></audio>
+                                    <h1 >{cancion.name}</h1>
+
+                                </div>
+                                
+                            </div>
+                        
+                        </>
+
+                    )
+
+                   }) 
+                }
+
+            </div>
+        </>
     
         )
 
